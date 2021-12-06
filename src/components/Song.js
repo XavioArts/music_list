@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "semantic-ui-react";
+import { Button, Grid, Header, Icon, Label } from "semantic-ui-react";
 
 class Song extends React.Component {
 
@@ -7,13 +7,30 @@ class Song extends React.Component {
         return (
             <Grid.Row>
                 <Grid.Column>
-                    <p>{this.props.name}</p>
+                    <Header as="h5">
+                        <Icon name="music" />
+                        <Header.Content>{this.props.name}</Header.Content>
+                    </Header>
                 </Grid.Column>
                 <Grid.Column>
-                    <p>{this.props.artist}</p>
+                    <Header as="h4">
+                        <Icon name="user outline" />
+                        <Header.Content>{this.props.artist}</Header.Content>
+                    </Header>
                 </Grid.Column>
                 <Grid.Column>
-                    <p>{this.props.likes}</p>
+                    <Button as="div" labelPosition="right">
+                        <Button color="blue">
+                            <Icon name="heart" />
+                            Likes 
+                        </Button>
+                        <Label as="a" basic color="blue" pointing="left">
+                            {this.props.likes}
+                        </Label>
+                    </Button>
+                </Grid.Column>
+                <Grid.Column>
+                    <Button color="red">Delete</Button>
                 </Grid.Column>
             </Grid.Row>
         )

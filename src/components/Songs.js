@@ -12,7 +12,7 @@ class Songs extends React.Component {
         return (
             <div>
                 <h3>Songs</h3>
-                <Grid columns={3} divided>
+                <Grid columns={4} divided>
                     {this.renderSongs()}
                 </Grid>
             </div>
