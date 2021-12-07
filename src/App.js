@@ -1,3 +1,4 @@
+import { thisExpression } from '@babel/types';
 import React from 'react';
 import { Container, Header } from 'semantic-ui-react';
 import './App.css';
@@ -23,6 +24,11 @@ class App extends React.Component {
     this.setState({songs: filteredSongs});
   };
 
+  editSong = (editedSong) => {
+    const newSongs = this.state.songs.map((song) => song.id === editedSong.id ? editedSong : song );
+    this.setState({songs: newSongs})
+  }
+
   addLike = (id) => {
     let find = this.state.songs.find((song) => song.id === id)
     find.likes++
@@ -34,7 +40,7 @@ class App extends React.Component {
     return (
       <Container textAlign="center">
         <Header as="h1">Music List App</Header>
-        <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike}/>
+        <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike} editSong={this.editSong}/>
         <SongForm addSong={this.addSong} />
       </Container >
     );
