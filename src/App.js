@@ -18,11 +18,23 @@ class App extends React.Component {
     this.setState({songs: newSongs});
   };
 
+  deleteSong = (id) => {
+    const filteredSongs = this.state.songs.filter((song) => song.id != id);
+    this.setState({songs: filteredSongs});
+  };
+
+  addLike = (id) => {
+    let find = this.state.songs.find((song) => song.id === id)
+    find.likes++
+    const editedLikes = this.state.songs.map((song) => song.id != id ? song : find );
+    this.setState({songs: editedLikes});
+  }
+
   render() {
     return (
       <Container textAlign="center">
         <Header as="h1">Music List App</Header>
-        <Songs songs={this.state.songs}/>
+        <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike}/>
         <SongForm addSong={this.addSong} />
       </Container >
     );

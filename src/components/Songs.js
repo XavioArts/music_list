@@ -5,7 +5,7 @@ import Song from "./Song";
 class Songs extends React.Component {
 
     renderSongs = () => {
-        return this.props.songs.map((song) => <Song {...song} />)
+        return this.props.songs.map((song) => <Song {...song} deleteSong={this.props.deleteSong} addLike={this.props.addLike}/>)
     }
 
     render() {
