@@ -10,6 +10,7 @@ class SongForm extends React.Component {
     };
 
     componentDidMount() {
+        console.log("mounted");
         if (this.props.id) {
             this.setState({
                 name: this.props.name,
@@ -17,6 +18,14 @@ class SongForm extends React.Component {
                 likes: this.props.likes,
             });
         }
+    }
+    
+    componentDidUpdate() {
+        console.log("updated");
+    };
+    
+    componentWillUnmount() {
+        console.log("will unmount");
     }
 
     handleChange = (e) => {
