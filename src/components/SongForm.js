@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { Button, Form } from "semantic-ui-react";
+import { CenterDiv } from "./Styles";
 
 class SongForm extends React.Component {
     state = { name: "", artist: "", likes: 0, show: false, active: false };
@@ -78,7 +79,7 @@ class SongForm extends React.Component {
             )
         } else {
             return (
-                <div>
+                <CenterDiv>
                     <Button toggle active={this.state.active} onClick={this.toggleShow}>
                         {this.state.show ? "Cancel" : "Add New Song"}
                     </Button>
@@ -96,7 +97,7 @@ class SongForm extends React.Component {
                             <Button type="submit">Submit</Button>
                         </Form>
                     )}
-                </div>
+                </CenterDiv>
             )
         }
     }

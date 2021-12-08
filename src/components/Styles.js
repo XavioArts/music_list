@@ -14,6 +14,13 @@ export const MainSeg = styled.div`
     text-align: center;
 `;
 
+export const FormSeg = styled.div`
+    width: 50vw;
+    margin: auto;
+    background: ${TERTIARY_COLOR} !important;
+    padding: 10px;
+`
+
 export const GridSeg = styled.div`
     background: rgba(255,255,255,0.1);
     border-radius: 15px;
@@ -36,6 +43,10 @@ export const ClearCont = styled.div`
     width: 100%;
     height: 60px;
 `;
+
+export const CenterDiv = styled.div`
+    text-align: center;
+`
     
 export const HeaderText = styled.h1`
     color: ${WHITE} !important;
