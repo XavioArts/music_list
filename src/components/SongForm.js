@@ -66,7 +66,7 @@ class SongForm extends React.Component {
                             <Form.Input name="artist" label="Song artist:" value={this.state.artist} onChange={this.handleChange} />
                         </Form.Field>
                         <Form.Field>
-                            <Form.Input type="integer" name="likes" label="Previous likes:" value={this.state.likes} onChange={this.handleChange} />
+                            <Form.Input type="integer" name="likes" label="Likes:" value={this.state.likes} onChange={this.handleChange} />
                         </Form.Field>
                         <Button type="submit">Submit</Button>
                     </Form>
@@ -75,26 +75,25 @@ class SongForm extends React.Component {
         } else {
             return (
                 <div>
-                <h2>Add a new song?</h2>
-                <Button onClick={this.toggleShow}>
-                    {this.state.show ? "Cancel" : "Add New"}
-                </Button>
-                {this.state.show && (
-                    <Form onSubmit={this.handleSubmit}>
-                        <Form.Field>
-                            <Form.Input name="name" label="Song name:" value={this.state.name} onChange={this.handleChange} />
-                        </Form.Field>
-                        <Form.Field>
-                            <Form.Input name="artist" label="Song artist:" value={this.state.artist} onChange={this.handleChange} />
-                        </Form.Field>
-                        <Form.Field>
-                            <Form.Input type="integer" name="likes" label="Previous likes:" value={this.state.likes} onChange={this.handleChange} />
-                        </Form.Field>
-                        <Button type="submit">Submit</Button>
-                    </Form>
-                )}
-            </div>
-        )
+                    <Button onClick={this.toggleShow}>
+                        {this.state.show ? "Cancel" : "Add New Song"}
+                    </Button>
+                    {this.state.show && (
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Field>
+                                <Form.Input name="name" label="Song name:" value={this.state.name} onChange={this.handleChange} />
+                            </Form.Field>
+                            <Form.Field>
+                                <Form.Input name="artist" label="Song artist:" value={this.state.artist} onChange={this.handleChange} />
+                            </Form.Field>
+                            <Form.Field>
+                                <Form.Input type="integer" name="likes" label="Previous likes:" value={this.state.likes} onChange={this.handleChange} />
+                            </Form.Field>
+                            <Button type="submit">Submit</Button>
+                        </Form>
+                    )}
+                </div>
+            )
         }
     }
 };

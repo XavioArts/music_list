@@ -1,9 +1,11 @@
 import { thisExpression } from '@babel/types';
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Segment } from 'semantic-ui-react';
 import './App.css';
+import AppContainer from './components/AppContainer';
 import SongForm from './components/SongForm';
 import Songs from './components/Songs';
+import { MainSeg } from './components/Styles';
 
 class App extends React.Component {
   state = {
@@ -11,6 +13,12 @@ class App extends React.Component {
       { id:1, name: "Juice", artist: "Chance the Rapper", likes: 10 },
       { id:2, name: "EdEddnEddy", artist: "J.I.D.", likes: 20 },
       { id:3, name: "Circus Clown", artist: "Mom Jeans", likes: 30 },
+      { id:4, name: "Jupiter", artist: "Matt Maltese", likes: 4837 },
+      { id:5, name: "Traffic", artist: "Reggie", likes: 32801 },
+      { id:6, name: "Charmander", artist: "Amine", likes: 94723 },
+      { id:7, name: "Forest Fire", artist: "Delta Sleep", likes: 210 },
+      { id:8, name: "Grateful", artist: "KOTA the Friend", likes: 12360 },
+      { id:9, name: "Say It", artist: "Ebz the Artist", likes: 30070 },
     ]
   }
 
@@ -38,11 +46,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container textAlign="center">
-        <Header as="h1">Music List App</Header>
-        <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike} editSong={this.editSong}/>
-        <SongForm addSong={this.addSong} />
-      </Container >
+      <AppContainer>
+        <Segment as={MainSeg}>
+          <Header as="h1">Music List App</Header>
+        </Segment>
+        <Segment as={MainSeg}>
+          <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike} editSong={this.editSong}/>
+        </Segment>
+        <Segment>
+          <SongForm addSong={this.addSong} />
+        </Segment>
+      </AppContainer >
     );
   }
 }
