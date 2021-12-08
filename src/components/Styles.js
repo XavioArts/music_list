@@ -12,7 +12,30 @@ export const MainSeg = styled.div`
     padding: 10px;
     width: 80vw;
     text-align: center;
-    `;
+`;
+
+export const GridSeg = styled.div`
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    width: 100%;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &:hover {
+        background: rgba(0,0,0,0.15);
+        box-shadow: rgba(99,99,99,0.2) 0px 8px 12px 0px;
+    }
+`;
+
+export const ClearCont = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+`;
     
 export const HeaderText = styled.h1`
     color: ${WHITE} !important;

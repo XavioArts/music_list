@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonContent, Grid, Header, Icon, Label } from "semantic-ui-react";
 import SongForm from "./SongForm";
-import { Ptext } from "./Styles";
+import { GridSeg, Ptext } from "./Styles";
 
 class Song extends React.Component {
 
@@ -18,16 +18,19 @@ class Song extends React.Component {
             <>
             <Grid.Row>
                 <Grid.Column>
-                    <Header as="h5">
-                        <Icon inverted name="music" />
-                        <Header.Content>
-                            <Ptext>
-                                {name}
-                            </Ptext>
-                        </Header.Content>
-                    </Header>
+                    <GridSeg>
+                        <Header as="h5">
+                            <Icon inverted name="music" />
+                            <Header.Content>
+                                <Ptext>
+                                    {name}
+                                </Ptext>
+                            </Header.Content>
+                        </Header>
+                    </GridSeg>
                 </Grid.Column>
                 <Grid.Column>
+                    <GridSeg>
                     <Header as="h4">
                         <Icon inverted name="user outline" />
                         <Header.Content>
@@ -36,6 +39,7 @@ class Song extends React.Component {
                         </Ptext>
                         </Header.Content>
                     </Header>
+                    </GridSeg>
                 </Grid.Column>
                 <Grid.Column>
                     <Button as="div" labelPosition="right">

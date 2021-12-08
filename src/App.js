@@ -3,9 +3,10 @@ import React from 'react';
 import { Container, Header, Segment } from 'semantic-ui-react';
 import './App.css';
 import AppContainer from './components/AppContainer';
+import MusicBar from './components/MusicBar';
 import SongForm from './components/SongForm';
 import Songs from './components/Songs';
-import { HeaderText, MainSeg } from './components/Styles';
+import { ClearCont, HeaderText, MainSeg } from './components/Styles';
 
 class App extends React.Component {
   state = {
@@ -50,7 +51,11 @@ class App extends React.Component {
         <Segment as={MainSeg}>
           <HeaderText>Music List App</HeaderText>
         </Segment>
-        <HeaderText>Songs</HeaderText>
+        <ClearCont>
+          <MusicBar />
+          <HeaderText>Songs</HeaderText>
+          <MusicBar />
+        </ClearCont>
         <Segment as={MainSeg}>
           <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike} editSong={this.editSong}/>
         </Segment>
