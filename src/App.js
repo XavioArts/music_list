@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Header, Segment } from 'semantic-ui-react';
 import './App.css';
 import AppContainer from './components/AppContainer';
+import CardGrid, { MyCard } from './components/CardGrid';
 import MusicBar from './components/MusicBar';
 import SongForm from './components/SongForm';
 import Songs from './components/Songs';
@@ -62,6 +63,13 @@ class App extends React.Component {
         <Segment>
           <SongForm addSong={this.addSong} />
         </Segment>
+        <CardGrid>
+          <MyCard/>
+          <MyCard/>
+          <MyCard/>
+          <MyCard/>
+          <MyCard/>
+        </CardGrid>
       </AppContainer >
     );
   }
