@@ -5,7 +5,7 @@ import './App.css';
 import AppContainer from './components/AppContainer';
 import SongForm from './components/SongForm';
 import Songs from './components/Songs';
-import { MainSeg } from './components/Styles';
+import { HeaderText, MainSeg } from './components/Styles';
 
 class App extends React.Component {
   state = {
@@ -48,8 +48,9 @@ class App extends React.Component {
     return (
       <AppContainer>
         <Segment as={MainSeg}>
-          <Header as="h1">Music List App</Header>
+          <HeaderText>Music List App</HeaderText>
         </Segment>
+        <HeaderText>Songs</HeaderText>
         <Segment as={MainSeg}>
           <Songs songs={this.state.songs} deleteSong={this.deleteSong} addLike={this.addLike} editSong={this.editSong}/>
         </Segment>

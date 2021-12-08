@@ -3,11 +3,15 @@ import React from "react";
 import { Button, Form } from "semantic-ui-react";
 
 class SongForm extends React.Component {
-    state = { name: "", artist: "", likes: 0, show: false };
+    state = { name: "", artist: "", likes: 0, show: false, active: false };
 
     toggleShow = () => {
-        this.setState({ show: !this.state.show});
+        this.setState({ show: !this.state.show, active: !this.state.active});
     };
+
+    // toggleActive = () => {
+
+    // }
 
     componentDidMount() {
         console.log("mounted");
@@ -75,7 +79,7 @@ class SongForm extends React.Component {
         } else {
             return (
                 <div>
-                    <Button onClick={this.toggleShow}>
+                    <Button toggle active={this.state.active} onClick={this.toggleShow}>
                         {this.state.show ? "Cancel" : "Add New Song"}
                     </Button>
                     {this.state.show && (

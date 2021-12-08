@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, ButtonContent, Grid, Header, Icon, Label } from "semantic-ui-react";
 import SongForm from "./SongForm";
+import { Ptext } from "./Styles";
 
 class Song extends React.Component {
 
@@ -18,14 +19,22 @@ class Song extends React.Component {
             <Grid.Row>
                 <Grid.Column>
                     <Header as="h5">
-                        <Icon name="music" />
-                        <Header.Content>{name}</Header.Content>
+                        <Icon inverted name="music" />
+                        <Header.Content>
+                            <Ptext>
+                                {name}
+                            </Ptext>
+                        </Header.Content>
                     </Header>
                 </Grid.Column>
                 <Grid.Column>
                     <Header as="h4">
-                        <Icon name="user outline" />
-                        <Header.Content>{artist}</Header.Content>
+                        <Icon inverted name="user outline" />
+                        <Header.Content>
+                        <Ptext>
+                            {artist}
+                        </Ptext>
+                        </Header.Content>
                     </Header>
                 </Grid.Column>
                 <Grid.Column>
@@ -41,8 +50,9 @@ class Song extends React.Component {
                 </Grid.Column>
                 <Grid.Column>
                     <Button.Group>
-                        <Button color="red" onClick={()=>deleteSong(id)}>Delete</Button>
-                        <Button color="yellow" onClick={this.toggleShow}>Edit</Button>
+                        <Button color='grey' onClick={()=>deleteSong(id)}>Delete</Button>
+                        <Button.Or />
+                        <Button basic color='grey' onClick={this.toggleShow}>Edit</Button>
                     </Button.Group>
                 </Grid.Column>
             </Grid.Row>

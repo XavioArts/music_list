@@ -12,7 +12,6 @@ class Songs extends React.Component {
     render() {
         return (
             <div>
-                <h3>Songs</h3>
                 <Grid columns={4} divided>
                     {this.renderSongs()}
                 </Grid>
